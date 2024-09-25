@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Payment Form</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .success-message {
+      display: none;
+      background-color: #4CAF50;
+      color: white;
+      font-weight: bolder;
+      padding: 10px;
+      text-align: center;
+      font-size: 1.7rem;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    </style>
+  <script>
+   function sell() {
+      const form = document.querySelector('form');
+      form.style.display = 'none';
+      const successMessage = document.querySelector('.success-message');
+      successMessage.style.display = 'block';
+      setTimeout(function() {
+        window.location.href = 'indexx.html';
+      }, 3000);
+    }
+  </script>
+</head>
+<body>
+    <section class="sell-form">
+  <h3>Enter Your<span> Bank Account Details</span></h3>
+  <form>
+    <label for="account_holder_name">Account Holder Name:</label>
+    <input type="text" id="account_holder_name" name="account_holder_name" required>
+    <br>
+    <label for="account_number">Account Number:</label>
+    <input type="text" id="account_number" name="account_number" required>
+    <br>
+    <label for="bank_name">Bank Name:</label>
+    <input type="text" id="bank_name" name="bank_name" required>
+    <br>
+    <label for="ifsc_code">IFSC Code:</label>
+    <input type="text" id="ifsc_code" name="ifsc_code" required>
+    <br>
+    <input type="checkbox" id="accept_terms" name="accept_terms" required>
+    <label for="accept_terms">I have read and accept the <a href="terms_and_conditions.html" target="_blank">Terms and Conditions</a></label>
+    <br>
+    <a href="#" onclick=sell() class="btn2">Sell</a>
+  </form>
+  <div class="success-message">Product added Successfully..!</div>
+  </section>
+</body>
+</html>
